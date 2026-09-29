@@ -1,8 +1,8 @@
-# StaticANS – Neural Network Tensor Compression with Asymmetric Numeral Systems (ANS)
+# NeuralANS – Neural Network Tensor Compression with Asymmetric Numeral Systems (ANS)
 
 ## Overview
 
-**StaticANS** is a research-oriented tool forked of [StaticBAC](https://github.com/Jiovana/StaticBAC) (a NN tensor compression with Static Binary Arithmetic Coding (StaticBAC)).
+**NeuralANS** is a research-oriented tool forked of [StaticBAC](https://github.com/Jiovana/StaticBAC) (a NN tensor compression with Static Binary Arithmetic Coding (StaticBAC)).
 The main target is same of StaticBAC: compress already quantized models in INT8 (preferrably) also  supporting  INT4, to INT32, in steps of 4. But, now using the **Asymmetric Numeral Systems** (ANS) coding, more specific the implementations: range-ANS (rANS) and tabled-ANS (tANS).
 
 The research pipeline:
@@ -33,7 +33,7 @@ This framework is designed for:
 ## Repository Structure
 
 ```text
-StaticANS/
+NeuralANS/
 │
 ├── source/          # C++ source code (encoder/decoder)
 ├── python/          # Python preprocessing (tables create & model export & quantization)
@@ -59,14 +59,14 @@ Main file is **source/Entrypoint.cpp**.
 
 ```bash
 git clone <repo_url>
-cd StaticANS
+cd NeuralANS
 mkdir build
 cd build
 cmake ..
 cmake --build .
 ```
 
-This generates the executable (e.g., StaticANS).
+This generates the executable (e.g., NeuralANS).
 
 ### Python: Export and Quantize Model
 
@@ -96,7 +96,7 @@ models/resnet50/
 ```
 
 ## Running the Codec
-[StaticANS.h](source/StaticANS.h)
+[NeuralANS.h](source/NeuralANS.h)
 The codec supports:
 
 - Encoding only
@@ -106,7 +106,7 @@ The codec supports:
 **Only Encode**
 
 ```shell
-./StaticANS \
+./NeuralANS \
     --encode \
     --binaries ./models/resnet50/binaries \
     --meta ./models/resnet50/tensor.meta \
@@ -116,7 +116,7 @@ The codec supports:
 **Only Decode**
 
 ```shell
-./StaticANS \
+./NeuralANS \
     --decode \
     --bitstream output.bin \
     --out_dir ./decoded_model
@@ -125,7 +125,7 @@ The codec supports:
 **Encode + Decode**
 
 ```shell
-./StaticANS \
+./NeuralANS \
     --encode --decode \
     --binaries ./models/resnet50/binaries \
     --meta ./models/resnet50/tensor.meta \
@@ -182,5 +182,3 @@ Decoding reconstructs quantized tensors (not original float values)
 * Might update static RLPS
 * Exploit tensor semantics to improve contexts
 * Parallel chunk processing to speed up encoder, also important for hardware implementation.
-* Change BAC to ANS
-

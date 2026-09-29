@@ -2,8 +2,6 @@
 
 #include <cmath>
 
-#include "Lib/CommonLib/BinaryEquiprobableANS.h"
-
 ANSEncoder::ANSEncoder(const Context &context) : context(context) {
     // Initialize states with first states.
     for (int i = 0; i < 2; i++) {

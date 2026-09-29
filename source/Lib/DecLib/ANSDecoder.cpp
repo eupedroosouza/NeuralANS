@@ -1,6 +1,5 @@
 #include "ANSDecoder.h"
 
-#include "Lib/CommonLib/BinaryEquiprobableANS.h"
 #include "Lib/EncLib/ANSEncoder.h"
 
 ANSDecoder::ANSDecoder(const Context &context, std::vector<uint8_t> bytestream) {

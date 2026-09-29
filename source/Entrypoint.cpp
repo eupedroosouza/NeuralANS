@@ -128,7 +128,7 @@ Based on DeepCABAC and NNCodec https://github.com/d-becking/nncodec2
 */
 
 
-
+#include "Lib/CommonLib/Context.h"
 #if defined(_WIN32)
   #include <windows.h>
   #include <psapi.h>
@@ -139,12 +139,8 @@ Based on DeepCABAC and NNCodec https://github.com/d-becking/nncodec2
 #include <iostream>
 #include <fstream>
 #include <vector>
-#include "Lib/EncLib/CABACEncoder.h"  // your header
-#include "Lib/EncLib/BinEncoder_simple.h"
-#include "Lib/CommonLib/ContextModel.h"
-#include "StaticANS.h"
+#include "NeuralANS.h"
 #include "Lib/CommonLib/TypeDef.h"
-#include "Lib/DecLib/CABACDecoder.h"
 
 #include <string>
 #include <algorithm>

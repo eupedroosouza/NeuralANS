@@ -1,7 +1,7 @@
 #pragma once
 #include <cstdint>
 
-#include "Lib/Utils/Bitstream.h"
+#include "../Utils/Bitstream.h"
 
 class BinaryEquiprobableANS {
 public:

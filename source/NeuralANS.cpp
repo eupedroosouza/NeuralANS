@@ -1,4 +1,4 @@
-#include "StaticANS.h"
+#include "NeuralANS.h"
 
 
 static constexpr uint32_t MAX_TENSOR_DIMS = 8; // max tensor rank supported
